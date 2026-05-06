@@ -368,6 +368,112 @@
       margin-bottom: 16px;
     }
 
+    .demo-shell {
+      background: white;
+      border: 1px solid var(--line);
+      border-radius: 30px;
+      padding: 28px;
+      box-shadow: 0 18px 48px rgba(0,0,0,0.055);
+    }
+
+    .input-strip {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 10px;
+      margin-bottom: 22px;
+    }
+
+    .input-pill {
+      background: var(--light-grey);
+      border: 1px solid var(--line);
+      border-radius: 999px;
+      padding: 9px 12px;
+      color: #2c312e;
+      font-size: 14px;
+      font-weight: 760;
+    }
+
+    .demo-grid {
+      display: grid;
+      grid-template-columns: 0.95fr 1.05fr;
+      gap: 18px;
+      align-items: stretch;
+    }
+
+    .demo-card {
+      background: #fff;
+      border: 1px solid var(--line);
+      border-radius: 22px;
+      padding: 22px;
+    }
+
+    .demo-card.soft {
+      background: #f7fbf8;
+      border-color: #dff1e4;
+    }
+
+    .demo-label {
+      color: var(--grey);
+      display: block;
+      font-size: 13px;
+      font-weight: 820;
+      margin-bottom: 12px;
+      text-transform: uppercase;
+    }
+
+    .message {
+      color: #232323;
+      font-size: 16px;
+      margin: 0;
+    }
+
+    .record-list {
+      display: grid;
+      gap: 10px;
+      margin: 0;
+    }
+
+    .record-list div {
+      display: grid;
+      grid-template-columns: 128px 1fr;
+      gap: 12px;
+      padding-bottom: 10px;
+      border-bottom: 1px solid #edf0ec;
+    }
+
+    .record-list div:last-child {
+      border-bottom: 0;
+      padding-bottom: 0;
+    }
+
+    .record-list dt {
+      color: var(--grey);
+      font-weight: 780;
+    }
+
+    .record-list dd {
+      margin: 0;
+    }
+
+    .analysis-list {
+      display: grid;
+      gap: 12px;
+      margin: 0;
+      padding: 0;
+      list-style: none;
+    }
+
+    .analysis-list li {
+      background: white;
+      border: 1px solid var(--line);
+      border-radius: 16px;
+      padding: 14px 16px;
+    }
+
+    .analysis-list strong {
+      color: var(--green-dark);
+    }
+
     .rule-panel {
       background: #101010;
       color: white;
@@ -533,7 +639,8 @@
       }
 
       .cards,
-      .flow {
+      .flow,
+      .demo-grid {
         grid-template-columns: 1fr;
       }
 
@@ -560,6 +667,7 @@
       </div>
       <div class="nav-right">
         <a href="#how">How it works</a>
+        <a href="#demo">Demo</a>
         <a href="#rules">Operating rules</a>
         <a href="#pilot" class="button">Join pilot</a>
       </div>
@@ -579,7 +687,7 @@
             <a class="button" href="#pilot">Apply for the pilot →</a>
             <a class="button secondary" href="#how">See how it works</a>
           </div>
-          <p class="small-note">We’re selecting 20 South African service businesses for an early manual pilot.</p>
+          <p class="small-note">We’re selecting 20 South African service businesses for an early pilot.</p>
         </div>
 
         <div class="mockup" aria-label="Product mockup">
@@ -662,6 +770,70 @@
             <div class="flow-number">5</div>
             <strong>Improve</strong>
             <p>Jots highlights risks, stuck jobs, unpaid balances, and patterns affecting revenue.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section id="demo">
+      <div class="container">
+        <h2>See Jots turn intake into work memory.</h2>
+        <p class="section-intro">
+          A service business can send Jots the messy material it already receives every day. Jots turns it into a clean work record, a suggested operating rule, and practical next actions.
+        </p>
+
+        <div class="demo-shell">
+          <div class="input-strip" aria-label="Business inputs Jots can process">
+            <span class="input-pill">Chats</span>
+            <span class="input-pill">PDFs</span>
+            <span class="input-pill">Screenshots</span>
+            <span class="input-pill">Spreadsheets</span>
+            <span class="input-pill">Invoices</span>
+            <span class="input-pill">Notes</span>
+          </div>
+
+          <div class="demo-grid">
+            <div class="demo-card">
+              <span class="demo-label">Messy customer message</span>
+              <p class="message">
+                Hi, we need decor for my sister's 40th on the 18th. Around 60 people, green and white theme, maybe balloon arch and table setup. Venue is in Midrand but I still need to confirm exact address. Can you send price? Also we paid R1,000 last time for deposit, not sure if that still works.
+              </p>
+            </div>
+
+            <div class="demo-card soft">
+              <span class="demo-label">Structured work record created by Jots</span>
+              <dl class="record-list">
+                <div><dt>Customer</dt><dd>Unknown, sister's 40th birthday</dd></div>
+                <div><dt>Work</dt><dd>Event decor: balloon arch and table setup</dd></div>
+                <div><dt>Date</dt><dd>18th, month not confirmed</dd></div>
+                <div><dt>Location</dt><dd>Midrand, exact venue missing</dd></div>
+                <div><dt>Theme</dt><dd>Green and white</dd></div>
+                <div><dt>Guest count</dt><dd>About 60 people</dd></div>
+                <div><dt>Status</dt><dd>Quote needed</dd></div>
+                <div><dt>Missing</dt><dd>Customer name, month, venue address, package, deposit rule</dd></div>
+              </dl>
+            </div>
+
+            <div class="demo-card soft">
+              <span class="demo-label">Operating rule suggested by Jots</span>
+              <p class="message">
+                For decor bookings, do not mark the job as confirmed until event date, exact venue, guest count, selected package, setup time, and deposit proof are attached.
+              </p>
+            </div>
+
+            <div class="demo-card">
+              <span class="demo-label">Prescriptive analysis</span>
+              <ul class="analysis-list">
+                <li><strong>Stuck:</strong> Quote cannot be final until the month and venue address are confirmed.</li>
+                <li><strong>Owed:</strong> Deposit terms need confirming before this can become a booking.</li>
+                <li><strong>Missing:</strong> Package choice and setup time are needed for staff handover.</li>
+                <li><strong>Improve:</strong> Add a standard decor intake checklist to reduce back-and-forth before quoting.</li>
+              </ul>
+            </div>
+          </div>
+
+          <div style="margin-top:22px;">
+            <a class="button" href="#pilot">Apply for the free Work Memory Audit</a>
           </div>
         </div>
       </div>
